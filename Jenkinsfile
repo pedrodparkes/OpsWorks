@@ -11,7 +11,7 @@ node {
         /* This builds the actual image; synonymous to
          * docker build on the command line */
 
-        app = docker.build("opsworks/nginx")
+        app = docker.build("pedrodeparkes/nginx")
     }
 
     stage('Test image') {
@@ -24,7 +24,7 @@ node {
     }
 
     stage('Push image') {
-        docker.withRegistry('https://registry.hub.docker.com/pedrodeparkes', 'pedrodeparkes-docker-hub') {
+        docker.withRegistry('https://registry.hub.docker.com/', 'pedrodeparkes-docker-hub') {
             app.push("${env.BUILD_NUMBER}")
             app.push("latest")
         }
