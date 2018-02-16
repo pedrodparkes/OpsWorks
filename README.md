@@ -1,2 +1,1 @@
-# OpsWorks
-Repo for test task for OpsWork team.
+# OpsWorks test task
