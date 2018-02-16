@@ -24,7 +24,7 @@ node {
     }
 
     stage('Push image') {
-        docker.withRegistry('https://hub.docker.com/r/pedrodeparkes/opsworks/', 'pedrodeparkes-docker-hub') {
+        docker.withRegistry('https://registry.hub.docker.com/pedrodeparkes', 'pedrodeparkes-docker-hub') {
             app.push("${env.BUILD_NUMBER}")
             app.push("latest")
         }
